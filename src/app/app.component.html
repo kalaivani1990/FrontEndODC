@@ -1,0 +1,37 @@
+﻿<!-- nav -->
+<!-- <div class="bg-img"> -->
+   
+    <nav class="navbar navbar-expand navbar-dark nav-app" *ngIf="currentUser">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/">Home Page</a>
+            <a class="nav-item nav-link" routerLink="/">Update Profile</a>
+            <a class="nav-item nav-link" routerLink="/">Book the appointment</a>
+            <a class="nav-item nav-link" routerLink="/">History</a>
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+    <!-- main app container -->
+   
+    <div class="jumbotron">
+        <div class="bg-img">
+        <div class="container">
+          
+            <div class="row">
+                <div class="col-sm-4 offset-sm-3">
+                    <alert></alert>
+                      
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div style="text-align: center;">
+        <b>
+        <!-- <p>Simple Solution:</p> -->
+                <p class="app-text-form">Login to choose the right doctor 
+            from wide specialization and make the payment</p><p class="app-text-form"> in a simple way takes just 2 min then doctor directly gives you a call for consulting.
+                </p>
+            </b>    
+    </div> 
+    <!-- </div> -->
