@@ -1,4 +1,5 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
+import { BookAppointmentComponent } from './book-the-apponitment/book-the-appointment.component';
 import { EditConsultantProfileComponent } from './editConsultant/editConsultantProfile.component';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
@@ -10,7 +11,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'edit', component: EditConsultantProfileComponent},
-  
+    { path: 'bookTheAppointment', component: BookAppointmentComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

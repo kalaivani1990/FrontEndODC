@@ -13,14 +13,14 @@ export class EditConsultantProfileComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        private authenticationService: AuthenticationService,
+  //      private authenticationService: AuthenticationService
         private userService: UserService,
         private alertService: AlertService
     ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) {
-            this.router.navigate(['/']);
-        }
+    //     if (this.authenticationService.currentUserValue) {
+    //         this.router.navigate(['/']);
+    //     }
     }
 
     ngOnInit() {
@@ -48,25 +48,25 @@ export class EditConsultantProfileComponent implements OnInit {
         this.submitted = true;
 
         // reset alerts on submit
-        this.alertService.clear();
+        // this.alertService.clear();
 
-        // stop here if form is invalid
-        if (this.editConsultantprofileForm.invalid) {
-            return;
-        }
+        // // stop here if form is invalid
+        // if (this.editConsultantprofileForm.invalid) {
+        //     return;
+        // }
 
-        this.loading = true;
-        this.userService.register(this.editConsultantprofileForm.value)
-            .pipe(first())
-            .subscribe(
-                data => {
+        // this.loading = true;
+        // this.userService.register(this.editConsultantprofileForm.value)
+        //     .pipe(first())
+        //     .subscribe(
+        //         data => {
                     
-                    this.alertService.success('updated successful', true);
-                    this.router.navigate(['/login']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
+        //             this.alertService.success('updated successful', true);
+        //             this.router.navigate(['/login']);
+        //         },
+        //         error => {
+        //             this.alertService.error(error);
+        //             this.loading = false;
+  //              });
     }
 }

@@ -14,13 +14,18 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AlertComponent } from './_components';
 import { EditConsultantProfileComponent } from './editConsultant/editConsultantProfile.component';
+import { BookAppointmentComponent } from './book-the-apponitment/book-the-appointment.component';
+import { CalendarModule } from './calendar/calendar.module';
+
+
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        CalendarModule
     ],
     declarations: [
         AppComponent,
@@ -28,6 +33,7 @@ import { EditConsultantProfileComponent } from './editConsultant/editConsultantP
         LoginComponent,
         RegisterComponent,
         EditConsultantProfileComponent,
+        BookAppointmentComponent,
         AlertComponent
     ],
     providers: [
