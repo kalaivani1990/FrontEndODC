@@ -34,7 +34,7 @@ export class CalendarComponent implements OnInit, AfterViewInit {
 
   navigatorConfig = {
     selectMode: "week",
-    showMonths: 3,
+    showMonths: 2,
     skipMonths: 3
   };
 

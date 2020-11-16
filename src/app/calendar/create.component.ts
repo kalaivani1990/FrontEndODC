@@ -6,6 +6,7 @@ import {CreateEventParams, DataService} from "./data.service";
 @Component({
   selector: 'create-dialog',
   template: `
+
       <daypilot-modal #modal>
           <div class="center">
               <h1>New Appointment</h1>
@@ -22,6 +23,7 @@ import {CreateEventParams, DataService} from "./data.service";
                       <input formControlName="end" type="text" placeholder="End"> <span
                           *ngIf="!form.controls.end.valid">Invalid appointment end</span>
                   </div>
+
                   <div class="form-item">
                       <button (click)="submit()" [disabled]="!form.valid">Create</button>
                       &nbsp;
