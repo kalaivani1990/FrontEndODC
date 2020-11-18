@@ -3,8 +3,9 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService, UserService, AuthenticationService } from '@/_services';
+const styles = './editConsultantProfile.component.css';
 
-@Component({ templateUrl: 'editConsultantProfile.component.html' })
+@Component({ templateUrl: 'editConsultantProfile.component.html',styleUrls: [styles] })
 export class EditConsultantProfileComponent implements OnInit {
     editConsultantprofileForm: FormGroup;
     loading = false;

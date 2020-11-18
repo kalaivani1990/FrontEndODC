@@ -23,7 +23,6 @@ import {CreateEventParams, DataService} from "./data.service";
                       <input formControlName="end" type="text" placeholder="End"> <span
                           *ngIf="!form.controls.end.valid">Invalid appointment end</span>
                   </div>
-
                   <div class="form-item">
                       <button (click)="submit()" [disabled]="!form.valid">Create</button>
                       &nbsp;
@@ -37,11 +36,12 @@ import {CreateEventParams, DataService} from "./data.service";
       form, input, button {
           font-size: 14px;
       }
-
       input {
           padding: 5px;
       }
-
+      <div>
+      <img src="http://FAKE-PLACEHOLDER-IMAGE-HERE"/>
+  </div>
       button {
           padding: 5px 15px;
       }
