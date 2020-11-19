@@ -22,12 +22,12 @@ ngOnInit(){
     this.patientHistoryList[0].amountPaid = "55 Euros";
 
     this.patientHistoryList[1] = new PatientHistory();
-    this.patientHistoryList[1].patientName = "Mr.Diamentidis";
+    this.patientHistoryList[1].patientName = "Mr.Daglier";
     this.patientHistoryList[1].problems = "Continuos cough over night from past 2 days";
     this.patientHistoryList[1].suggestions = "Take medicines suggested. Drink hot water with honey, pepper and turmeric mixed";
-    this.patientHistoryList[1].nextVisit = "15-11-2020";
+    this.patientHistoryList[1].nextVisit = "17-11-2020";
     this.patientHistoryList[1].medicine = "Robitussin Cough";
-    this.patientHistoryList[1].dateofVisit = "13-11-2020";
+    this.patientHistoryList[1].dateofVisit = "15-11-2020";
     this.patientHistoryList[1].amountPaid = "40 Euros";
     
 }
