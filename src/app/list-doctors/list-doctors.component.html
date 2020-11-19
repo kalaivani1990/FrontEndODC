@@ -4,7 +4,7 @@
 </head>
 <body></body>
 </html> -->
-
+<div class="bg-img">
 <div *ngIf="listDoctors"> 
     <div *ngFor="let data of listDoctors;">
         <div class="div">
@@ -15,4 +15,5 @@
       Specialist    :  {{data.speciality}}<br><br>
       <button type="button" class="listDoctorsButton" (click)="bookTheAppointment()">Book the appointment </button>
     </div>
+</div>
 </div>

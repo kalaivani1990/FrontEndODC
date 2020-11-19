@@ -1,7 +1,8 @@
-
+<div class="bg-img">
     <div *ngFor="let data of patientHistoryList">
         <div class="patientHistoryDiv">
             {{data.patientName}}, Date of visit : {{data.dateofVisit}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" class="listPatientButton" (click)="downloadPdf(data)">Download</button>
         </div>
+</div>
 </div>
