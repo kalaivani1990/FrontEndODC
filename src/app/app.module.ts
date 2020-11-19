@@ -17,6 +17,7 @@ import { EditConsultantProfileComponent } from './editConsultant/editConsultantP
 import { BookAppointmentComponent } from './book-the-apponitment/book-the-appointment.component';
 import { CalendarModule } from './calendar/calendar.module';
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
+import { PatientHistoryComponent } from './patient-history/patient-history.component';
 
 
 
@@ -36,7 +37,8 @@ import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
         EditConsultantProfileComponent,
         BookAppointmentComponent,
         AlertComponent,
-        ListDoctorsComponent
+        ListDoctorsComponent,
+        PatientHistoryComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

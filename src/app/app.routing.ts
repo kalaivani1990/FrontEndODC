@@ -6,6 +6,7 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_helpers';
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
+import { PatientHistoryComponent } from './patient-history/patient-history.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'edit', component: EditConsultantProfileComponent},
     { path: 'bookTheAppointment', component: BookAppointmentComponent },
     { path: 'doctorsList', component: ListDoctorsComponent },
+    { path: 'patientHistory', component: PatientHistoryComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
