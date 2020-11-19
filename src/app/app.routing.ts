@@ -5,6 +5,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_helpers';
+import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'edit', component: EditConsultantProfileComponent},
     { path: 'bookTheAppointment', component: BookAppointmentComponent },
+    { path: 'doctorsList', component: ListDoctorsComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

@@ -1,0 +1,18 @@
+<!-- <html>
+<head>
+<div> This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+</head>
+<body></body>
+</html> -->
+
+<div *ngIf="listDoctors"> 
+    <div *ngFor="let data of listDoctors;">
+        <div class="div">
+      Name          :  {{data.fullname}}<br>
+      Date of Birth :  {{data.dob}}<br>
+      Address       :  {{data.address}}<br>
+      Qualification :  {{data.qualification}}<br>
+      Specialist    :  {{data.speciality}}<br><br>
+      <button type="button" class="listDoctorsButton" (click)="bookTheAppointment()">Book the appointment </button>
+    </div>
+</div>
