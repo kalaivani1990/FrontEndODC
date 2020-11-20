@@ -18,6 +18,7 @@ import { BookAppointmentComponent } from './book-the-apponitment/book-the-appoin
 import { CalendarModule } from './calendar/calendar.module';
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
+import { RegisterPatientComponent } from './registerPatient/registerPatient.component';
 
 
 
@@ -38,7 +39,8 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
         BookAppointmentComponent,
         AlertComponent,
         ListDoctorsComponent,
-        PatientHistoryComponent
+        PatientHistoryComponent,
+        RegisterPatientComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

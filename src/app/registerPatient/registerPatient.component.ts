@@ -1,13 +1,13 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService, UserService, AuthenticationService } from '@/_services';
 
-@Component({ templateUrl: 'register.component.html' })
-export class RegisterComponent implements OnInit {
-    registerForm: FormGroup;
+@Component({ templateUrl: 'registerPatient.component.html' })
+export class RegisterPatientComponent implements OnInit {
+    registerPatientForm: FormGroup;
     loading = false;
     submitted = false;
 
@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.registerForm = this.formBuilder.group({
+        this.registerPatientForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             username: ['', Validators.required],
@@ -34,16 +34,12 @@ export class RegisterComponent implements OnInit {
             city: ['', Validators.required],
             pin: ['', Validators.required],
             mail: ['', Validators.required],
-            phone: ['', Validators.required],
-            speciality: ['', Validators.required],
-            qualification: ['', Validators.required],
-            experience: ['', Validators.required],
-            registration: ['', Validators.required]
+            phone: ['', Validators.required]
         });
     }
 
     // convenience getter for easy access to form fields
-    get f() { return this.registerForm.controls; }
+    get f() { return this.registerPatientForm.controls; }
 
     onSubmit() {
         this.submitted = true;
@@ -52,12 +48,12 @@ export class RegisterComponent implements OnInit {
         this.alertService.clear();
 
         // stop here if form is invalid
-        if (this.registerForm.invalid) {
+        if (this.registerPatientForm.invalid) {
             return;
         }
 
         this.loading = true;
-        this.userService.register(this.registerForm.value)
+        this.userService.register(this.registerPatientForm.value)
             .pipe(first())
             .subscribe(
                 data => {
