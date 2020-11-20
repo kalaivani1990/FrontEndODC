@@ -1,14 +1,18 @@
 ﻿
-<h2 class="app-text-form">Consult doctor online</h2>
+<h2 style="margin:auto; text-align:center; " class="app-text-form">Consult Doctor Online</h2>
 
 <br>
-<h2 class="app-text-form">Login</h2>
+<h2 style="color:white;background-color: #59a3e8;;"class="app-text-form">Login</h2>
+<a routerLink="/register" class="btn btn-link">Consultant Registration</a>
+<a  routerLink="/registerPatient" class="btn btn-link">Patient Registration</a>
+
+
 <div class="jumbotron">
 <div class="bg-img">
     <div class="container">
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <div class="col-sm-6">
+        <div class="col-sm-10">
            
               <div class="col-sm-6 form-group">
         <label for="username" class="app-text-form">Username</label>
@@ -31,13 +35,13 @@
 
     <div class="form-group">
         <div class="col-sm-6 form-group">
-        <button [disabled]="loading" class="btn button-app">
+            <div class="col-sm-6 form-group">
+        <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Login
-        </button>
-        <a routerLink="/register" class="btn btn-link">Consultant Registration</a>
-        <a routerLink="/registerPatient" class="btn btn-link">Patient Registration</a>
-    </div>
+        </button> 
+        </div>
+        </div>
     </div>
 </div>
 </form>
