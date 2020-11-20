@@ -1,0 +1,70 @@
+<h2 style="color:white;background-color: #59a3e8;;">Update Your Profile </h2>
+	<div class="jumbotron">
+        <div class="bg-img">
+        <div class="container">
+            <form [formGroup]="editPatientprofileForm" (ngSubmit)="onSubmit()" >
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />  
+                    </div>
+                     <div class="col-sm-4 form-group">
+                         <label>Last Name</label>
+                         <input type="text" formControlName="lastName"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                </div>
+                </div>
+                     <div class="row">
+                        <div class="col-sm-4 form-group">
+                             <label>D.O.B</label>
+                            <input type="date" placeholder="Enter City Name Here.." class="form-control">
+                         </div>
+                        <div class="col-sm-4 form-group">
+                             <label>Gender</label>
+                            <input type="text" class="form-control">
+                        </div>	
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                 <label>Phone Number</label>
+                                <input type="number" onKeyPress="if(this.value.length==16) return false;" min="0" formControlName="Phonenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Phonenumber.errors }">
+                                <div *ngIf="submitted && f.Phonenumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Phonenumber.errors.required">Phone Number is required</div>
+                                </div>
+                             </div>
+                            <div class="col-sm-4 form-group">
+                                 <label>City</label>
+                                <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">City is required</div>
+                                </div>
+                            </div>	
+                         </div>
+                         <div class="row">
+      <div class="col-sm-4 form-group">
+        <label for="pin">Pin</label>
+        <input type="number" onKeyPress="if(this.value.length==6) return false;" min="0" formControlName="pin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pin.errors }" />
+         <div *ngIf="submitted && f.pin.errors" class="invalid-feedback">
+         <div *ngIf="f.pin.errors.required">Pin is required</div>
+        </div>
+         </div>
+     <div class="col-sm-4 form-group">
+        <label for="email">Email</label>
+        <input type="email"  formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+         <div *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+        </div>	
+        </div>
+              
+    <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Update
+    </button>                            
+         <a routerLink="/login" class="btn btn-link">Cancel</a>
+  </div>
+   </form>                                           
+        </div>
+   
+        </div>
+    

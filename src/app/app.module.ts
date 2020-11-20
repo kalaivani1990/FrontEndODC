@@ -19,6 +19,8 @@ import { CalendarModule } from './calendar/calendar.module';
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { RegisterPatientComponent } from './registerPatient/registerPatient.component';
+import { EditPatientProfileComponent } from './editPatient/editPatient.component';
+import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 
 
 
@@ -39,7 +41,9 @@ import { RegisterPatientComponent } from './registerPatient/registerPatient.comp
         BookAppointmentComponent,
         AlertComponent,
         ListDoctorsComponent,
+        ListAppointmentsComponent,
         PatientHistoryComponent,
+        EditPatientProfileComponent,
         RegisterPatientComponent
     ],
     providers: [

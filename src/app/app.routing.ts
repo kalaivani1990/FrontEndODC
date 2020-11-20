@@ -8,6 +8,9 @@ import { AuthGuard } from './_helpers';
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { RegisterPatientComponent } from './registerPatient/registerPatient.component';
+import { EditPatientProfileComponent } from './editPatient/editPatient.component';
+import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
+
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -16,7 +19,9 @@ const routes: Routes = [
     { path: 'edit', component: EditConsultantProfileComponent},
     { path: 'bookTheAppointment', component: BookAppointmentComponent },
     { path: 'doctorsList', component: ListDoctorsComponent },
+    { path: 'appointment', component: ListAppointmentsComponent },
     { path: 'patientHistory', component: PatientHistoryComponent },
+    { path: 'editPatient', component: EditPatientProfileComponent},
     { path: 'registerPatient', component: RegisterPatientComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

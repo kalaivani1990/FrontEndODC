@@ -1,0 +1,12 @@
+<div class="bg-img">
+    <div *ngIf="listDoctors"> 
+        <div *ngFor="let data of listDoctors;">
+            <div class="div">
+          Name          :  {{data.fullname}}<br>
+          Date of Appointment :  {{data.doa}}<br>
+          Time     :  {{data.time}}<br>
+          <button type="button" >Open </button>
+        </div>
+    </div>
+    </div>
+
