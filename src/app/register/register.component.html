@@ -1,4 +1,4 @@
-﻿<h2 class="app-text-form">Consultant Registration</h2>
+﻿<h2 class="app-text-form">Registration</h2>
 <br>
 <div class="jumbotron">
     <div class="bg-img">
@@ -46,7 +46,7 @@
     </div>
 </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-sm-4 form-group">
 <div class="form-group">
 <label for="date" class="app-text-form">D.O.B</label>
@@ -67,8 +67,8 @@
       </label>
 </div>
 </div>
-</div>
-<div class="row">
+</div> -->
+<!-- <div class="row">
 <div class="col-sm-4 form-group">
     <div class="form-group">
         <label for="city" class="app-text-form">City</label>
@@ -87,8 +87,8 @@
         </div>
     </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
             <div class="col-sm-4 form-group">
                 <div class="form-group">
                     <label for="mail" class="app-text-form">E-Mail</label>
@@ -107,8 +107,8 @@
                     </div>
                 </div>
                         </div>
-                    </div>
-                        <div class="row">
+                    </div> -->
+                        <!-- <div class="row">
                             <div class="col-sm-4 form-group">
                     <div class="form-group">
                         <label for="speciality" class="app-text-form">Speciality</label>
@@ -127,8 +127,8 @@
                         </div>
                     </div>
                         </div>
-                        </div>
-                        <div class="row">
+                        </div> -->
+                        <!-- <div class="row">
                             <div class="col-sm-4 form-group">
                     <div class="form-group">
                         <label for="experience" class="app-text-form">Experience</label>
@@ -147,9 +147,16 @@
                         </div>
                     </div>
                         </div>
-                        </div>
+                        </div> -->
             
     
+    <div class="form-group">
+        <label for="userType" class="app-text-form">Are you a doctor or consultant?</label>
+    <select class="form-control" style="width: 8cm;" formControlName="userType" [ngClass]="{ 'is-invalid': submitted && f.userType.errors }">
+        <option value="Consultant" >Consultant</option>
+        <option value="Doctor">Doctor</option>
+    </select>
+</div>
     <div class="form-group">
         <button [disabled]="loading" class="btn button-app">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>

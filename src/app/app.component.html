@@ -1,13 +1,24 @@
 ﻿<!-- nav -->
 <!-- <div class="bg-img"> -->
    
-    <nav class="navbar navbar-expand navbar-dark nav-app" *ngIf="currentUser">
+    <nav class="navbar navbar-expand navbar-dark nav-app" *ngIf="enableConsultant && currentUser">
         <div class="navbar-nav">
             <a class="nav-item nav-link" routerLink="/">Home Page</a>
             <a class="nav-item nav-link" routerLink="/edit">Update Profile</a>
             <a class="nav-item nav-link" routerLink="/doctorsList">Your Doctors</a>
             <!-- <a class="nav-item nav-link" routerLink="/bookTheAppointment">Book the appointment</a> -->
             <a class="nav-item nav-link" routerLink="/patientHistory">History</a>
+            
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand navbar-dark nav-app" *ngIf="enableDoctor && currentUser">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/">Home Page</a>
+            <a class="nav-item nav-link" routerLink="/">Update Profile</a>
+            <a class="nav-item nav-link" routerLink="/">Your Appointments</a>
+            <!-- <a class="nav-item nav-link" routerLink="/bookTheAppointment">Book the appointment</a> -->
+            <a class="nav-item nav-link" routerLink="/">History</a>
             
             <a class="nav-item nav-link" (click)="logout()">Logout</a>
         </div>
