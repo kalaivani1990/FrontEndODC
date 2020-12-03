@@ -21,6 +21,8 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
 import { RegisterPatientComponent } from './registerPatient/registerPatient.component';
 import { EditPatientProfileComponent } from './editPatient/editPatient.component';
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
+import { AccountService } from './_services/account.services';
+import { API_ENDPOINTS, API_ENDPOINTS_VALUES } from './configure/api-endpoints';
 
 
 
@@ -47,11 +49,12 @@ import { ListAppointmentsComponent } from './list-appointments/list-appointments
         RegisterPatientComponent
     ],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
+        // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        AccountService,
+        {provide: API_ENDPOINTS, useValue: API_ENDPOINTS_VALUES},
         // provider used to create fake backend
-        fakeBackendProvider
+       fakeBackendProvider
     ],
     bootstrap: [AppComponent]
 })
