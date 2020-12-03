@@ -19,12 +19,17 @@ export class AppComponent implements OnInit{
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
     ngOnInit() {
+
+        if(this.currentUser!=null) {
+
+       
         if(this.currentUser.userType == "Consultant") {
             this.enableConsultant = true;
 
         } else if(this.currentUser.userType == "Doctor") {
             this.enableDoctor = true;
         }
+    }
     }
 
     logout() {
