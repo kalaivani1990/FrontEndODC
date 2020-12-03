@@ -1,16 +1,20 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { AuthenticationService } from './_services';
 import { User } from './_models';
 
 import './_content/app.less';
+import { map, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent implements OnInit{
     currentUser: User;
     enableConsultant = false;
     enableDoctor = false;
+    consultantName:string;
+    protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
     constructor(
         private router: Router,
@@ -35,5 +39,11 @@ export class AppComponent implements OnInit{
     logout() {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
+    }
+    openDoctorsList() {
+        this.router.navigate(['/doctorsList/'+this.currentUser.username]);
+    }
+    openAppointment() {
+        this.router.navigate(['/appointment/'+this.currentUser.username]);
     }
 }

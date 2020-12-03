@@ -1,6 +1,10 @@
 import { OnInit, Component } from "@angular/core";
 import { DoctorInfo } from "@/_models/doctor.info";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { AccountService } from "@/_services/account.services";
+import { Doctor } from "@/_models/doctor.model";
+import { map, takeUntil } from "rxjs/operators";
+import { Subject } from "rxjs";
 const styles = './list-doctors.component.less';
 
 @Component({
@@ -11,39 +15,37 @@ styleUrls: [styles]
 export class ListDoctorsComponent implements OnInit {
 
     listDoctors:DoctorInfo[] = [];
-    constructor(private router: Router) {
-
+    doctors:Doctor[] = [];
+    doctorName:string;
+    consultantName:string;
+    protected ngUnsubscribe: Subject<void> = new Subject<void>();
+    constructor(private router: Router, private accountService: AccountService,private route: ActivatedRoute) {
+        this.route.params.pipe(takeUntil(this.ngUnsubscribe),
+        map((params:Params)=> params['consultantName'])).subscribe((value)=>{
+                this.consultantName = value;
+        });
     }
     
 ngOnInit(){
 
-    this.listDoctors[0] = new DoctorInfo();
-    this.listDoctors[0].fullname = "Dr.Anne";
-    this.listDoctors[0].dob = "09-08-1987";
-    this.listDoctors[0].address = "cantadorstraße 31, Germany 40221";
-    this.listDoctors[0].availablity = true;
-    this.listDoctors[0].qualification = "MBBS., DGO.,";
-    this.listDoctors[0].speciality = "Gynecologist";
 
-    this.listDoctors[1] = new DoctorInfo();
-    this.listDoctors[1].fullname = "Dr.Marc";
-    this.listDoctors[1].dob = "07-06-1980";
-    this.listDoctors[1].address = "kölnerstraße 381, Germany 40227";
-    this.listDoctors[1].availablity = true;
-    this.listDoctors[1].qualification = "MBBS., MD.,";
-    this.listDoctors[1].speciality = "General Medicine";
+    this.accountService.getAllDoctors().subscribe((data)=>{
+        this.doctors = JSON.parse(JSON.stringify(data));
 
-    this.listDoctors[2] = new DoctorInfo();
-    this.listDoctors[2].fullname = "Dr.Bhakit";
-    this.listDoctors[2].dob = "15-04-1986";
-    this.listDoctors[2].address = "oststraße 1, Germany 40229";
-    this.listDoctors[2].availablity = true;
-    this.listDoctors[2].qualification = "BDS., MDS.,";
-    this.listDoctors[2].speciality = "Dentist";
-
-
+        for(let i=0;i<this.doctors.length;i++) {
+            this.listDoctors[i] = new DoctorInfo();
+            this.listDoctors[i].fullname = this.doctors[i].firstName + " "+this.doctors[i].lastName;
+            this.listDoctors[i].dob = this.doctors[i].dateofbirth;
+            this.listDoctors[i].address = this.doctors[i].city + ", "+this.doctors[i].pin + ", Contact : "+this.doctors[i].phonenumber;
+            this.listDoctors[i].availablity = true;
+            this.listDoctors[i].qualification = this.doctors[i].qualification;
+            this.listDoctors[i].speciality = this.doctors[i].speciality;
+            this.listDoctors[i].userName = this.doctors[i].userName;
+        }
+    });
 }
-bookTheAppointment() {
-    this.router.navigate(['/bookTheAppointment']);
+bookTheAppointment(data:DoctorInfo) {
+   this.doctorName = data.userName;
+    this.router.navigate(['/bookTheAppointment/' + this.doctorName+'/'+this.consultantName]);
 }
 }

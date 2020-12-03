@@ -5,4 +5,5 @@ export class DoctorInfo {
     speciality:string;
     qualification:string;
     availablity:boolean;
+    userName:string;
 }

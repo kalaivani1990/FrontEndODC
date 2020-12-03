@@ -1,6 +1,39 @@
 <h1>Calendar</h1>
+
+<br>
+<div *ngIf="successflag">
+  <span style="color: green;">{{successmessage}}</span>
+</div>
+<br>
+
+<form [formGroup]="bookTheAppointmentForm" (ngSubmit)="onSubmit()" >
+  <div class="col-sm-10">
+      <div class="row">
+          <div class="col-sm-4 form-group">
+           
+              <label><b>Choose Your Appointment Date & Time</b></label>
+              <input type="datetime-local" class="form-control" formControlName="appointmentDate" [ngClass]="{ 'is-invalid': submitted && f.appointmentDate.errors }" />  
+          </div>
+          <div class="col-sm-4 form-group">
+           
+            <label><b>What is the illness are you facing?</b></label>
+            <input type="text" class="form-control" formControlName="problems" [ngClass]="{ 'is-invalid': submitted && f.problems.errors }" />  
+        </div>
+      </div>
+      <div class="row">
+        &nbsp; &nbsp;
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Pay and Book
+      </button>   
+      </div>
+    </div>
+</form>
+<br>
 <calendar-component></calendar-component>
-<button class="snipcart-add-item btn btn-lg btn-success"
+
+
+<!-- <button class="snipcart-add-item btn btn-lg btn-success"
   type="button"
   data-item-name="nidin"
   data-item-price="1000"
@@ -8,4 +41,4 @@
   data-item-url="localhost4040"
   data-item-description="fees">
    Pay 
-</button>
+</button> -->
