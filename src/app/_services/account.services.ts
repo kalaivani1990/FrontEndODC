@@ -8,6 +8,7 @@ import { catchError, map, share } from 'rxjs/operators';
 import { Consultant } from '@/_models/consultant.model';
 import { Doctor } from '@/_models/doctor.model';
 import { Appointment } from '@/_models/appointment.model';
+import { HistoryData } from '@/_models/history.model';
 
 @Injectable()
 export class AccountService {
@@ -43,6 +44,18 @@ export class AccountService {
     }
     getAllAppointments(doctorName:string): Observable<any> {
         const url = this.apiEndpoints.GET_ALL_APPOINTMENTS(doctorName);
+        return this.http.get(url).pipe(share());
+    }
+    createHistory(history:HistoryData): Observable<any> {
+        const url = this.apiEndpoints.CREATE_HISTORY();
+        return this.http.post(url,history);
+    }
+    showAllPatientHistory(): Observable<any> {
+        const url = this.apiEndpoints.SHOW_ALL_PATIENT_HISTORY();
+        return this.http.get(url).pipe(share());
+    }
+    showPatientHistory(patientName:string): Observable<any> {
+        const url = this.apiEndpoints.SHOW_PATIENT_HISTORY(patientName);
         return this.http.get(url).pipe(share());
     }
 }

@@ -10,6 +10,8 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
 import { RegisterPatientComponent } from './registerPatient/registerPatient.component';
 import { EditPatientProfileComponent } from './editPatient/editPatient.component';
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
+import { DoctorHistoryComponent } from './doctor-history/doctor-history.component';
+import { ShowAllPatientHistoryComponent } from './show-all-patient-history/show-all-patient-history.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,8 @@ const routes: Routes = [
     { path: 'patientHistory', component: PatientHistoryComponent },
     { path: 'editPatient', component: EditPatientProfileComponent},
     { path: 'registerPatient', component: RegisterPatientComponent },
+    { path: 'doctorHistory', component: DoctorHistoryComponent },
+    { path: 'showAllPatientHistory', component: ShowAllPatientHistoryComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

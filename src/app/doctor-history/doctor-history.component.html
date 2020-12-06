@@ -1,0 +1,67 @@
+<h2 style="color:white;background-color: #59a3e8;;">Create Patient History </h2>
+	<div class="jumbotron">
+        <div class="bg-img">
+        <div class="container">
+            <div *ngIf="successflag">
+                <span style="color: green;">{{successmessage}}</span>
+            </div>
+            <br>
+            <form [formGroup]="createHistoryForm" (ngSubmit)="onSubmit()" >
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Patient Name</label>
+                        <input type="text" class="form-control" formControlName="patientName" [ngClass]="{ 'is-invalid': submitted && f.patientName.errors }" />  
+                    </div>
+                     <div class="col-sm-4 form-group">
+                         <label>Date of Consultation</label>
+                         <input type="date" formControlName="consultationDate"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.consultationDate.errors }" />
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Problems</label>
+                        <textarea class="form-control" formControlName="problems" [ngClass]="{ 'is-invalid': submitted && f.problems.errors }" >  </textarea>
+                    </div>
+                     <div class="col-sm-4 form-group">
+                         <label>Suggestions</label>
+                         <textarea formControlName="suggestions"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.suggestions.errors }" ></textarea>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Medicines</label>
+                        <textarea class="form-control" formControlName="medicines" [ngClass]="{ 'is-invalid': submitted && f.medicines.errors }" ></textarea>  
+                    </div>
+                     <div class="col-sm-4 form-group">
+                         <label>Next Visit</label>
+                         <input type="text" formControlName="nextVisit"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nextVisit.errors }" />
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Amount Paid</label>
+                        <input type="text" class="form-control" formControlName="amountPaid" [ngClass]="{ 'is-invalid': submitted && f.amountPaid.errors }" />  
+                    </div>
+                </div>
+            </div>
+            &nbsp; &nbsp;
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Create History
+            </button>     &nbsp;&nbsp; 
+                            
+            <a routerLink="/showAllPatientHistory" class="btn btn-link">View Patient's History</a>&nbsp;&nbsp; 
+            <a routerLink="/" class="btn btn-link">Cancel</a>
+            </form>
+        </div>
+        </div> 
+        
+        </div>
+           

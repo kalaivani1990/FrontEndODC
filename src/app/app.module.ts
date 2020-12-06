@@ -23,6 +23,8 @@ import { EditPatientProfileComponent } from './editPatient/editPatient.component
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 import { AccountService } from './_services/account.services';
 import { API_ENDPOINTS, API_ENDPOINTS_VALUES } from './configure/api-endpoints';
+import { DoctorHistoryComponent } from './doctor-history/doctor-history.component';
+import { ShowAllPatientHistoryComponent } from './show-all-patient-history/show-all-patient-history.component';
 
 
 
@@ -46,7 +48,9 @@ import { API_ENDPOINTS, API_ENDPOINTS_VALUES } from './configure/api-endpoints';
         ListAppointmentsComponent,
         PatientHistoryComponent,
         EditPatientProfileComponent,
-        RegisterPatientComponent
+        RegisterPatientComponent,
+        DoctorHistoryComponent,
+        ShowAllPatientHistoryComponent
     ],
     providers: [
         // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
